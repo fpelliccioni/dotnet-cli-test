@@ -1,1 +1,4 @@
-gcc
+mkdir lib
+g++ -I. -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++11 -m64 -O3 -DNDEBUG -fPIC -std=gnu++11 -o native.cpp.o -c native.cpp
+g++  -fPIC -std=c++11 -m64 -O3 -DNDEBUG -m64 -shared -Wl,-soname,libnative.so -o lib/libnative.so native.cpp.o
+
